@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import About
 
 # Create your views here.
-
-def about_binary_beans(request):
-    return HttpResponse('Hello coffee lovers!')
+def about_store(request):
+    return render(request,"about.html")
