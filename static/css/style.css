@@ -1,0 +1,48 @@
+
+body {
+    background: url("../images/coffee-shop.jpg");
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media(max-width: 991px){
+    .sidebar{
+        background-color: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+    }
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-brand {
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    font-size: 190%;
+    color: black;
+}
+
+.offcanvas-title {
+    color: black;
+    font-size: 150%;
+}
+
+.nav-link {
+    color: black;
+    font-size: 125%;
+}
+
+.login {
+    color: black;
+    font-size: 100%;
+}
+
+
+
+
+
