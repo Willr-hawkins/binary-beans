@@ -40,15 +40,15 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Side Bar -->
-        <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="sidebar offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <!-- SideBar Header-->
           <div class="offcanvas-header border-bottom">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Binary Beans</h5>
             <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <!-- Sidebar body-->
-          <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-            <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 flex-grow-1 pe-3">
+          <div class="offcanvas-body d-flex p-4 p-lg-0">
+            <ul class="navbar-nav justify-content-center justify-content-lg-end align-items-center flex-column flex-lg-row fs-5 flex-grow-1 flex-grow-1 pe-3 ">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
@@ -62,11 +62,6 @@
                 <a class="nav-link" href="#">Reviews</a>
               </li>
             </ul>
-            <!-- login / Sign Up-->
-            <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-              <a href="#" class="login text-decoration-none">Login</a>
-              <a href="#" class="login text-decoration-none px-3 py-1 rounded-4" style="background-color: #4281A4;">Sign Up</a>
-            </div>
           </div>
         </div>
       </div>
@@ -79,5 +74,7 @@
       {% endblock content %}
 
     </main>
+
+
 </body>
 </html>
