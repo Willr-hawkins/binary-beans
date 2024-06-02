@@ -1,11 +1,4 @@
 
-body {
-    background: url("../images/coffee-shop.jpg");
-    background-blend-mode: multiply;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 @media(max-width: 991px){
     .sidebar{
@@ -44,7 +37,7 @@ body {
     position: relative;
 }
 
-.nav-link .active {
-    color: red;
-}
+
+
+ 
 
