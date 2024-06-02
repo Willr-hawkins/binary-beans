@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     
 </head>
-<body class="vh-100 overflow-hidden">
+<body class="vh-100 overflow-scroll">
 
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -67,22 +67,33 @@
       </div>
     </nav>
 
-    <main>
+    <!-- Hero section -->
+    <header class="p-4 mt-5 mb-0">
+       <div class="container-fluid">
+        <h1 class="display-5 fw-bold">Binary Beans</h1>
+      </div>
+    </header>
 
+    <section class="container">
       {% block content %}
       <!-- Content Goes here -->
       {% endblock content %}
+    </section>
   
-    </main>
 
-    <section class="fixed-bottom">
-      <footer class="text-center" style="background-color: rgba(255, 255, 255, 0.75);">
+    <section>
+      <footer class="text-center">
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="text-center p-3">
           © 2024 Copyright:
           <a class="text-body" href="#">BinaryBeans</a>
+          <!-- Copyright -->
+
+          <!-- Contact -->
+          <p>Contact Us at: BinaryBeans@gmail.com</p>
+          <!-- Contact -->
+
         </div>
-        <!-- Copyright -->
       </footer>
     </section>
 

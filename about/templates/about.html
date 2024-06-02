@@ -2,20 +2,20 @@
 
 {% block content %}
 
-<div class="d-column-flex p-2 text-center col-12 col-md-8 col-lg-6 position-absolute top-50 start-50 translate-middle mb-1">
-    <div style="background-color: rgb(255, 255, 255, 0.75);">
-        <h2>{{ about.title }}</h2>
+<section class="container">
+    <h1 class="text-center display-5 mt-5">{{ about.title }}</h1>
+    <div class="text-center">
         <hr>
-        <p>{{ about.content }}</p>
-        <hr>
+        <p>{{ about.content}}</p>
     </div>
-    <div style="background-color: rgb(255, 255, 255, 0.75);">
-        <h4>Opening Times</h3>
+    <h2 class="text-center display-7">Opening Times</h2>
+    <div class="text-center flex-column mb-5">
         <hr>
-        <p>Monday - Friday: 9:00am - 4:00pm | Saturday: 8:30am - 5:00pm | Sunday: CLOSED</p>
-        <hr>
+        <p>| Monday - Friday: 9:00am - 4:00pm |</p>
+        <p>| Saturday: 8:30am - 5:00pm |</p>
+        <p>| Sunday: CLOSED |</p>
     </div>
-</div>
+</section>
 
 
 {% endblock content %}
