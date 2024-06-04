@@ -1,6 +1,7 @@
 {% load static %}
-
 {% url 'home' as about_url %}
+{% url 'menu' as menu_url %}
+
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -34,7 +35,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand" href="#">BINARY BEANS</a>
+        <a class="navbar-brand" href="{% url 'about' %}">BINARY BEANS</a>
         <!-- Toggle Button -->
         <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -50,10 +51,10 @@
           <div class="offcanvas-body d-flex p-4 p-lg-0">
             <ul class="navbar-nav justify-content-center justify-content-lg-end align-items-center flex-column flex-lg-row fs-5 flex-grow-1 flex-grow-1 pe-3 ">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'about' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link {% if request.path == menu_url %}active{% endif %}" href="{% url 'menu' %}">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Events</a>
@@ -70,7 +71,7 @@
     <!-- Hero section -->
     <header class="p-4 mt-5 mb-0">
        <div class="container-fluid">
-        <h1 class="display-5 fw-bold">Binary Beans</h1>
+        <h1 class="display-2 fw-bold">Binary Beans</h1>
       </div>
     </header>
 
