@@ -1,1 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="container mb-3" id="menu">
+    <h1 class="text-center display-5 mt-5 text-white">{{ menu.title }}</h1>
+    <div class="text-white" style="text-align: center;">
+        <div style="display: inline-block; text-align: left;">
+            <p><pre>{{ menu.content}}</pre></p>
+        </div>
+    </div>
+    
+</section>
+
+{% endblock content %}
