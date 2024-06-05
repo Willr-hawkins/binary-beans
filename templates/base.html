@@ -1,6 +1,7 @@
 {% load static %}
 {% url 'home' as about_url %}
 {% url 'menu' as menu_url %}
+{% url 'events' as events_url %}
 
 
 <!DOCTYPE html>
@@ -57,7 +58,7 @@
                 <a class="nav-link {% if request.path == menu_url %}active{% endif %}" href="{% url 'menu' %}">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Events</a>
+                <a class="nav-link {% if request.path == events_url %}active{% endif %}" href="{% url 'events' %}">Events</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Reviews</a>
