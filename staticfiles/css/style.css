@@ -1,23 +1,20 @@
-
 body {
-    background: url("../images/coffee-shop.jpg");
-    background-blend-mode: multiply;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: rgb(237, 242, 239);
 }
 
 @media(max-width: 991px){
     .sidebar{
-        background-color: rgba(255, 255, 255, 0.4);
+        background-color: rgba(237, 242, 239);
         backdrop-filter: blur(10px);
     }
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(237, 242, 239);;
     display: flex;
     justify-content: center;
+    position: fixed;
+    
 }
 
 .navbar-brand {
@@ -34,15 +31,48 @@ body {
 
 .nav-link {
     color: black;
-    font-size: 125%;
+    font-size: 100%;
 }
 
 .login {
     color: black;
     font-size: 100%;
+    position: relative;
+}
+
+/* Header */
+
+header {
+    background: url("../images/coffee-shop.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
+
+header h1{
+    text-align: center;
+    margin-top: 200px;
+    color: rgb(237, 242, 239);
 }
 
 
+/* Footer */
 
+footer {
+    background-color: rgb(221, 226, 227);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
 
+/* Menu */
 
+#menu {
+    background: url("../images/black-board.avif");
+}
+
+/* Events page */
+
+pre {
+    white-space: pre-wrap;
+}
