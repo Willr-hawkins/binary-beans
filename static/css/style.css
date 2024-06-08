@@ -70,3 +70,9 @@ footer {
 #menu {
     background: url("../images/black-board.avif");
 }
+
+/* Events page */
+
+pre {
+    white-space: pre-wrap;
+}
