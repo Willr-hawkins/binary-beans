@@ -21,6 +21,8 @@ class BookingRequest(models.Model):
     customer_name = models.CharField(max_length=200)
     customer_email = models.EmailField()
     booking_date = models.DateField()
+    event_title = models.CharField(max_length=300)
+    event_description = models.TextField()
     read = models.BooleanField(default=False)
 
     def __str__(self):
