@@ -34,10 +34,8 @@ body {
     font-size: 100%;
 }
 
-.login {
-    color: black;
-    font-size: 100%;
-    position: relative;
+.offcanvas.offcanvas-top {
+    height: 400px;
 }
 
 /* Header */
