@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
 from django.views import generic
-from .models import Events
+from .models import Events, BookingRequest
 from .forms import BookingForm
 
 # Create your views here.
@@ -15,6 +15,8 @@ def about_events(request):
 
     events = events = Events.objects.all().first()
     booking_form = BookingForm()
+    bookings = BookingRequest.objects.all()
+    
 
     return render(
         request,
@@ -22,5 +24,6 @@ def about_events(request):
         {
             "events": events,
             "booking_form": booking_form,
+            "bookings": bookings,
         }
     )

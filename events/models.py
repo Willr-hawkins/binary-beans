@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -16,14 +17,16 @@ class Events(models.Model):
 
 class BookingRequest(models.Model):
     """
-    Stores a single request for a private event
+    Stores a single request for a private event realted to :model:`auth.User
     """
-    customer_name = models.CharField(max_length=200)
+    customer_name = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='customer'
+    )
     customer_email = models.EmailField()
     booking_date = models.DateField()
     event_title = models.CharField(max_length=300)
     event_description = models.TextField()
-    read = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)
 
     def __str__(self):
         return f"Private event booking request from {self.customer_name}"
