@@ -11,31 +11,40 @@
         <p class="my-5"><pre>{{ events.content}}</pre></p>
     </div>
     
+    {% if user.is_authenticated %}
+    <div class="text-center">
+        <hr>
+        <h5>Your booked events will be displayed here</h5>
+    </div>
+    {% endif %}
+
     {% for booking in bookings %}
     {% if booking.customer_name == user %}
     <div class="text-center mb-4">
-        <h2>My Events</h2>
-        <hr>
         <p><pre>|  {{ booking.event_title }}  |</pre></p>
-        <p><pre>On {{ booking.booking_date }}</pre></p>
         <p>-----------------------------------</p>
+        <p><pre>On {{ booking.booking_date }}</pre></p>
         <p><pre>{{ booking.event_description }}</pre></p>
         {% if booking.approved == False %}
-        <h5 class="py-3">Your booking is yet to be approved!</h5>
+        <h6 class="py-3 text-danger">Booking Unapproved</h6>
         {% elif booking.approved == True %}
-        <h5 class="py-3">Your booking has been approved!</h5>
+        <h6 class="py-3 text-success">Booking Approved</h6>
         {% endif %}
-        <hr>
+        <button class="btn btn-edit btn-secondary me-5" data-comment_id="{{ comment.id }}">Edit</button>
+        <button class="btn btn-delete btn-danger ms-5" data-comment_id="{{ comment.id }}">Delete</button>
     </div>
 
     {% endif %}
     {% endfor %}
     
     <div class="row justify-content-center mt-5">
+        <hr>
         <h2>Book a private event at our cafe!</h2>
         <p>Looking for the perfect venue to host your next private event? Binary Beans offers a charming and intimate setting ideal for any occasion. Whether you're planning a birthday celebration, corporate meeting, baby shower, or any other special gathering, our café provides a cozy and welcoming atmosphere to make your event unforgettable. </p>
         {% if user.is_authenticated %}
         <form method="post">
+            <hr>
+            <p>Booking for {{ user }}</p>
             {{ booking_form | crispy }}
             {% csrf_token %}
             <button class="btn btn-secondary mb-5" type="submit">Submit</button>

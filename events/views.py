@@ -10,7 +10,9 @@ def about_events(request):
     if request.method == "POST":
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
-            booking_form.save()
+            booking = booking_form.save(commit=False)
+            booking.customer_name = request.user
+            booking.save()
             messages.add_message(request, messages.SUCCESS, "Private event booking request received! I plan to respond within 2 working days.")
 
     events = events = Events.objects.all().first()
