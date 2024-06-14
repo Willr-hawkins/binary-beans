@@ -30,7 +30,7 @@
         <h6 class="py-3 text-success">Booking Approved</h6>
         {% endif %}
         <a class="btn btn-edit btn-secondary me-2" href="{% url 'edit_booking' booking.id %}">Edit</a>
-        <a class="btn btn-delete btn-danger ms-2" href="{% url 'delete_booking' booking.id %}">Delete</a>
+        <a class="btn btn-delete btn-danger ms-2" href="{% url 'delete_booking' booking.id %}">Cancel</a>
     </div>
 
     {% endif %}
