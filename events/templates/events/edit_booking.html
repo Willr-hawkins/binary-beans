@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="container mt-5">
+    <h2>Edit Booking</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn btn-secondary" type="submit">Save changes</button>
+    </form>
+    <a class="btn btn-link" href="{% url 'events' %}">Cancel</a>
+  </section>
+{% endblock %}

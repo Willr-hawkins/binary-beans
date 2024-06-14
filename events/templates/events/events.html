@@ -3,7 +3,6 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
 <section class="container">
     <h2 class="text-center display-5 mt-5">{{ events.title }}</h2>
     <div class="text-center mb-4">
@@ -30,8 +29,8 @@
         {% elif booking.approved == True %}
         <h6 class="py-3 text-success">Booking Approved</h6>
         {% endif %}
-        <button class="btn btn-edit btn-secondary me-5" data-comment_id="{{ comment.id }}">Edit</button>
-        <button class="btn btn-delete btn-danger ms-5" data-comment_id="{{ comment.id }}">Delete</button>
+        <a class="btn btn-edit btn-secondary me-2" href="{% url 'edit_booking' booking.id %}">Edit</a>
+        <a class="btn btn-delete btn-danger ms-2" href="{% url 'delete_booking' booking.id %}">Delete</a>
     </div>
 
     {% endif %}
