@@ -1,14 +1,17 @@
+/* fonts */
+.monomaniac-one-regular {
+    font-family: "Monomaniac One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+  }
+  
+
 body {
     background-color: rgb(237, 242, 239);
 }
 
-@media(max-width: 991px){
-    .sidebar{
-        background-color: rgba(237, 242, 239);
-        backdrop-filter: blur(10px);
-    }
-}
-
+/* navbar */
 .navbar {
     background-color: rgba(237, 242, 239);;
     display: flex;
@@ -34,10 +37,8 @@ body {
     font-size: 100%;
 }
 
-.login {
-    color: black;
-    font-size: 100%;
-    position: relative;
+.offcanvas.offcanvas-top {
+    height: 400px;
 }
 
 /* Header */
@@ -75,4 +76,22 @@ footer {
 
 pre {
     white-space: pre-wrap;
+}
+
+
+/* media querys */
+
+@media(max-width: 991px){
+    .sidebar{
+        background-color: rgba(237, 242, 239);
+        backdrop-filter: blur(10px);
+    }
+}
+
+@media screen and (max-width: 325px) {
+
+    .navbar-brand {
+        font-size: 150%;
+    }
+
 }
