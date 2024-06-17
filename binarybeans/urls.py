@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('about.urls'), name='about-urls'),
     path('menu/', include('menu.urls'), name='menu-urls'),
     path('events/', include('events.urls'), name='events-urls'),
+    path('reviews/', include('reviews.urls'), name='reviews-urls'),
 ]

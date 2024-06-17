@@ -11,6 +11,7 @@ body {
     background-color: rgb(237, 242, 239);
 }
 
+
 /* navbar */
 .navbar {
     background-color: rgba(237, 242, 239);;
@@ -78,7 +79,15 @@ pre {
     white-space: pre-wrap;
 }
 
+/* review page */
 
+#newReview {
+    background-color: transparent;
+}
+
+.fa-star {
+    color: #C9A227;
+}
 /* media querys */
 
 @media(max-width: 991px){
