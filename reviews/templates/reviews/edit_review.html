@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <h3>Edit Review</h3>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <form method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button class="btn btn-success right rounded-4" type="submit">Save changes &raquo;</button>
+      </form>
+      <a class="btn btn-link text-white text-decoration-none px-3 py-1 bg-secondary rounded-4 mt-2" href="{% url 'reviews' %}">Cancel</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
