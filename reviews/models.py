@@ -17,9 +17,13 @@ class Review(models.Model):
     )
     review_body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(User, related_name='review_likes')
     
     class Meta:
         ordering = ['-created_on']
+
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return f"Review by {self.review_name}"

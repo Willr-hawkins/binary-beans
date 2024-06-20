@@ -16,6 +16,10 @@ def review_list(request):
 
     review_form = ReviewForm()
     reviews = Review.objects.all()
+
+    for review in reviews:
+        review.total_likes = review.total_likes()
+
     review_count = reviews.count()
 
     return render(
@@ -24,9 +28,15 @@ def review_list(request):
         {
             "review_form": review_form,
             "reviews": reviews,
-            "review_count": review_count
+            "review_count": review_count,
         }
     )
+
+def likeView(request, pk):
+    review = get_object_or_404(Review, id=request.POST.get('review_id'))
+    review.likes.add(request.user)
+    
+    return redirect('reviews')
 
 def edit_review(request, review_id):
     review = get_object_or_404(Review, id=review_id, review_name=request.user)

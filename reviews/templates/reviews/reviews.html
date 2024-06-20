@@ -37,6 +37,19 @@
                         <a class="btn btn-edit btn-secondary me-2" href="{% url 'edit_review' review.id %}">Edit</a>
                         <a class="btn btn-delete btn-danger ms-2" href="{% url 'delete_review' review.id %}">Delete</a>
                         </div>
+                        {% else %}
+                        <div class="mt-4 text-end">
+                            <form action="{% url 'like_review' review.pk %}" method="POST">
+                                {% csrf_token %}
+                                <button class="btn" style="background-color: none;" type="submit" name="review_id" value="{{ review.id }}">
+                                    {% if request.user.is_authenticated and request.user not in review.likes.all %}
+                                    <i class="fa-regular fa-thumbs-up fa-xl"></i> {{ review.total_likes }}
+                                    {% else %}
+                                    <i class="fa-solid fa-thumbs-up fa-xl" style="color: #16ca43;"></i> {{ review.total_likes }}
+                                    {% endif %}
+                                </button>
+                            </form>
+                        </div>
                         {% endif %}
                     </div>
                 </div>
