@@ -5,3 +5,7 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('star_rating', 'review_body')
+        widgets = {
+            'star_rating': forms.Select(choices=[(i, i) for i in range(0, 6)])
+        }
+   
