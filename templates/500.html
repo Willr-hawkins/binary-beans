@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="container">
+    <div class="text-center">
+        <span class="monomaniac-one-regular">500 ERROR</span>
+        <p class="fs-5">------------------</p>
+        <p class="fs-3">We're sorry there has been a internal server issue!</p>
+        <a class="btn btn-secondary mb-3" href="{% url 'about' %}">BACK TO HOMEPAGE</a>
+    </div>
+</section>
+
+{% endblock %}

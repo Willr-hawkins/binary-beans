@@ -32,12 +32,12 @@
                         <div id="review{{ review.id }}">
                             {{ review.review_body | linebreaks }}
                         </div>
-                        {% if review.review_name == user %}
+                        {% if user.is_authenticated and review.review_name == user %}
                         <div class="mt-4 text-end">
                         <a class="btn btn-edit btn-secondary me-2" href="{% url 'edit_review' review.id %}">Edit</a>
                         <a class="btn btn-delete btn-danger ms-2" href="{% url 'delete_review' review.id %}">Delete</a>
                         </div>
-                        {% else %}
+                        {% elif user.is_authenticated and review.review_name != user %}
                         <div class="mt-4 text-end">
                             <form action="{% url 'like_review' review.pk %}" method="POST">
                                 {% csrf_token %}
