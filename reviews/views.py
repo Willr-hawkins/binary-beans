@@ -19,6 +19,8 @@ def review_list(request):
 
     for review in reviews:
         review.total_likes = review.total_likes()
+    
+
 
     review_count = reviews.count()
 
@@ -34,7 +36,13 @@ def review_list(request):
 
 def likeView(request, pk):
     review = get_object_or_404(Review, id=request.POST.get('review_id'))
-    review.likes.add(request.user)
+    liked = False
+    if review.likes.filter(id=request.user.id).exists():
+        review.likes.remove(request.user)
+        liked = False
+    else:
+        review.likes.add(request.user)
+        liked = True
     
     return redirect('reviews')
 

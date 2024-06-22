@@ -12,7 +12,7 @@ class Review(models.Model):
     review_name = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name = 'reviewer'
     )
-    star_rating = models.IntegerField(default=0,
+    star_rating = models.IntegerField(default=1,
         validators = [MinValueValidator(1), MaxValueValidator(5)],
     )
     review_body = models.TextField()

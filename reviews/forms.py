@@ -6,6 +6,6 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ('star_rating', 'review_body')
         widgets = {
-            'star_rating': forms.Select(choices=[(i, i) for i in range(0, 6)])
+            'star_rating': forms.Select(choices=[(i, i) for i in range(1, 6)])
         }
    
