@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-willrhawkin-binarybeans-wtttti04kh3.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = ['8000-willrhawkin-binarybeans-armfjtp2ln6.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
 
 

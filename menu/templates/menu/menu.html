@@ -3,14 +3,31 @@
 
 {% block content %}
 
-<section class="container mb-3" id="menu">
-    <h1 class="text-center display-5 mt-5 text-white">{{ menu.title }}</h1>
-    <div class="text-white" style="text-align: center;">
-        <div style="display: inline-block; text-align: left;">
-            <p><pre>{{ menu.content}}</pre></p>
+<section class="container mb-3">
+    <!-- Display the Cafe's standard Menu -->
+    <h1 class="text-center display-5 mt-5">Cafe Menu</h1>
+    <hr>
+     <div id="menu">
+        <h1 class="text-center display-5 mt-4 pt-4 text-white">{{ menu.title }}</h1>
+        <div class="text-white" style="text-align: center;">
+            <div style="display: inline-block; text-align: left;">
+                <p><pre>{{ menu.content}}</pre></p>
+            </div>
         </div>
-    </div>
-    
+    </div>  
+    <!-- Display the Event Menus -->
+     <h1 class="text-center display-5 mt-5">Event Menus</h1>
+     <hr>
+     {% for event_menu in event_menus %}
+     <div id="menu">
+        <h1 class="text-center display-5 mt-4 pt-4 text-white">{{ event_menu.title }}</h1>
+        <div class="text-white" style="text-align: center;">
+            <div class="text-center pb-4">
+                <p><pre>{{ event_menu.content}}</pre></p>
+            </div>
+        </div>
+     </div>
+     {% endfor %}
 </section>
 
 {% endblock content %}

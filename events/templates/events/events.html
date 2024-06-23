@@ -24,6 +24,17 @@
         <p>-----------------------------------</p>
         <p><pre>On {{ booking.booking_date }}</pre></p>
         <p><pre>{{ booking.event_description }}</pre></p>
+        <p><pre>Chosen Menu | {{ booking.menu }}</pre></p>
+        <div class="d-flex justify-content-center">
+            <div id="menu" style="width: 600px; height: 700px;">
+                <h1 class="text-center display-5 mt-4 pt-4 text-white">{{ booking.menu.title }}</h1>
+                <div class="text-white" style="text-align: center;">
+                    <div class="text-center pb-4">
+                        <p><pre>{{ booking.menu.content }}</pre></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         {% if booking.approved == False %}
         <h6 class="py-3 text-danger">Booking Unapproved</h6>
         {% elif booking.approved == True %}

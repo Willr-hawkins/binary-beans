@@ -1,4 +1,5 @@
 from django.db import models
+from menu.models import EventMenus
 from django.contrib.auth.models import User
 
 
@@ -27,6 +28,9 @@ class BookingRequest(models.Model):
     event_title = models.CharField(max_length=300)
     event_description = models.TextField()
     approved = models.BooleanField(default=False)
+    menu = models.ForeignKey(
+        EventMenus, on_delete=models.CASCADE, related_name='menu'
+    )
 
     def __str__(self):
         return f"Private event booking request from {self.customer_name}"
