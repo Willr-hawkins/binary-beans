@@ -5,7 +5,7 @@ from .models import About
 # Create your views here.
 def about_store(request):
 
-    about = about = About.objects.all().first()
+    about = About.objects.all().first()
 
     return render(
         request,
