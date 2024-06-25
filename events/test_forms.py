@@ -2,11 +2,15 @@ from django.test import TestCase
 from .forms import BookingForm
 from menu.models import EventMenus
 
+
 class TestBookingForm(TestCase):
 
     def setUp(self):
         # Create an instance of EventMenus
-        self.event_menu = EventMenus.objects.create(title='Test menu', content='This is a test menu')
+        self.event_menu = EventMenus.objects.create(
+            title='Test menu',
+            content='This is a test menu'
+        )
 
     def test_form_is_valid(self):
         """
@@ -33,7 +37,9 @@ class TestBookingForm(TestCase):
             'event_description': 'This is a test event',
             'menu': self.event_menu.id,
         })
-        self.assertFalse(booking_form.is_valid(), msg='No customer email was provided')
+        self.assertFalse(
+            booking_form.is_valid(),
+            msg='No customer email was provided')
 
     def test_booking_date_is_required(self):
         """
@@ -46,7 +52,9 @@ class TestBookingForm(TestCase):
             'event_description': 'This is a test event',
             'menu': self.event_menu.id,
         })
-        self.assertFalse(booking_form.is_valid(), msg='No booking date was provided')
+        self.assertFalse(
+            booking_form.is_valid(),
+            msg='No booking date was provided')
 
     def test_event_title_is_required(self):
         """
@@ -59,7 +67,9 @@ class TestBookingForm(TestCase):
             'event_description': 'This is a test event',
             'menu': self.event_menu.id,
         })
-        self.assertFalse(booking_form.is_valid(), msg='No event title was provided')
+        self.assertFalse(
+            booking_form.is_valid(),
+            msg='No event title was provided')
 
     def test_event_description_is_required(self):
         """
@@ -72,7 +82,9 @@ class TestBookingForm(TestCase):
             'event_description': '',
             'menu': self.event_menu.id,
         })
-        self.assertFalse(booking_form.is_valid(), msg='No event description was provided')
+        self.assertFalse(
+            booking_form.is_valid(),
+            msg='No event description was provided')
 
     def test_menu_is_required(self):
         """

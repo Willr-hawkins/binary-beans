@@ -4,6 +4,7 @@ from django.views import generic
 from .models import Events, BookingRequest
 from .forms import BookingForm
 
+
 # Create your views here.
 def about_events(request):
 
@@ -13,12 +14,15 @@ def about_events(request):
             booking = booking_form.save(commit=False)
             booking.customer_name = request.user
             booking.save()
-            messages.add_message(request, messages.SUCCESS, "Private event booking request received! I plan to respond within 2 working days.")
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                "Booking Request recieved! Awaiting approval."
+            )
 
     events = events = Events.objects.all().first()
     booking_form = BookingForm()
     bookings = BookingRequest.objects.all()
-    
 
     return render(
         request,
@@ -30,8 +34,13 @@ def about_events(request):
         }
     )
 
+
 def edit_booking(request, booking_id):
-    booking = get_object_or_404(BookingRequest, id=booking_id, customer_name=request.user)
+    booking = get_object_or_404(
+        BookingRequest,
+        id=booking_id,
+        customer_name=request.user
+        )
 
     if request.method == "POST":
         form = BookingForm(request.POST, instance=booking)
@@ -43,10 +52,19 @@ def edit_booking(request, booking_id):
     else:
         form = BookingForm(instance=booking)
 
-    return render(request, 'events/edit_booking.html', {'form': form, 'booking': booking})
+    return render(
+        request,
+        'events/edit_booking.html',
+        {'form': form, 'booking': booking}
+    )
+
 
 def delete_booking(request, booking_id):
-    booking = get_object_or_404(BookingRequest, id=booking_id, customer_name=request.user)
+    booking = get_object_or_404(
+        BookingRequest,
+        id=booking_id,
+        customer_name=request.user
+    )
 
     if request.method == "POST":
         booking.delete()

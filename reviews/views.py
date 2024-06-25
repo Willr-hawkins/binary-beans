@@ -4,6 +4,7 @@ from django.views import generic
 from .models import Review
 from .forms import ReviewForm
 
+
 # Create your views here.
 def review_list(request):
 
@@ -19,8 +20,6 @@ def review_list(request):
 
     for review in reviews:
         review.total_likes = review.total_likes()
-    
-
 
     review_count = reviews.count()
 
@@ -34,6 +33,7 @@ def review_list(request):
         }
     )
 
+
 def likeView(request, pk):
     review = get_object_or_404(Review, id=request.POST.get('review_id'))
     liked = False
@@ -43,8 +43,8 @@ def likeView(request, pk):
     else:
         review.likes.add(request.user)
         liked = True
-    
     return redirect('reviews')
+
 
 def edit_review(request, review_id):
     review = get_object_or_404(Review, id=review_id, review_name=request.user)
@@ -59,7 +59,11 @@ def edit_review(request, review_id):
     else:
         form = ReviewForm(instance=review)
 
-    return render(request, 'reviews/edit_review.html', {'form': form, 'review': review})
+    return render(
+        request,
+        'reviews/edit_review.html',
+        {'form': form, 'review': review})
+
 
 def delete_review(request, review_id):
     review = get_object_or_404(Review, id=review_id, review_name=request.user)

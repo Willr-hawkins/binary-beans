@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .forms import ReviewForm
 
+
 class TestReviewForm(TestCase):
 
     def test_form_is_valid(self):
@@ -21,7 +22,10 @@ class TestReviewForm(TestCase):
             'star_rating': 10,
             'review_body': 'Test review',
         })
-        self.assertFalse(form.is_valid(), msg='Star rating field is not valid, must be within the range 1 to 5')
+        self.assertFalse(
+                form.is_valid(),
+                msg='Star rating field is not valid',
+            )
 
     def test_star_rating_is_required(self):
         """
@@ -32,7 +36,7 @@ class TestReviewForm(TestCase):
             'review_body': 'Test review',
         })
         self.assertFalse(form.is_valid(), msg='No star rating was provided')
-    
+
     def test_review_body_is_required(self):
         """
         Test for the review_body field.

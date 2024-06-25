@@ -315,4 +315,5 @@ All automatic tests passed.
 
 ## Validation
 
-
+### The W3C Markup validation service
+![W3C HTML validation](https://github.com/Willr-hawkins/binary-beans/assets/148203271/b2f334df-f55b-4210-854e-0ad454f40f71)

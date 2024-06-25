@@ -1,6 +1,7 @@
 from .models import Review
 from django import forms
 
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
@@ -8,4 +9,3 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             'star_rating': forms.Select(choices=[(i, i) for i in range(1, 6)])
         }
-   
