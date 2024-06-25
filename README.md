@@ -321,7 +321,9 @@ All automatic tests passed.
 ### CI Python Linter
 ![CI python linter](https://github.com/Willr-hawkins/django-blog-project/assets/148203271/911e69df-f608-41c5-86bd-1306fd14c28d)
 
-## Credits 
+## Credits
+
+I have used the knowledge I learnt from the I Think Before I Blog course content, and I have taken inspiration from the code written in the walktrough project.
 
 For the liking functionality and unliking functionality i took inspiration from the following youtube videos:
 
