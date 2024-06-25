@@ -317,3 +317,18 @@ All automatic tests passed.
 
 ### The W3C Markup validation service
 ![W3C HTML validation](https://github.com/Willr-hawkins/binary-beans/assets/148203271/b2f334df-f55b-4210-854e-0ad454f40f71)
+
+### CI Python Linter
+![CI python linter](https://github.com/Willr-hawkins/django-blog-project/assets/148203271/911e69df-f608-41c5-86bd-1306fd14c28d)
+
+## Credits 
+
+For the liking functionality and unliking functionality i took inspiration from the following youtube videos:
+
+- [Liking Functionality](https://www.youtube.com/watch?v=PXqRPqDjDgc)
+
+- [Unliking Functionality](https://www.youtube.com/watch?v=dwgIi8dspa4)
+
+## Acknowledgment
+
+I would like to express my gratitude to Spencer Barriball for guiding me during this project and offering me support to overcome challenges I faced during completing this project.
