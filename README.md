@@ -13,7 +13,6 @@ Users of the website can leave reviews directly on our site, sharing their thoug
 - HTML
 - CSS
 - Boostrap Framework CSS
-- Javascript
 - Django Framework
 
 ## Tools used
