@@ -7,7 +7,7 @@
     <h2 class="text-center display-5 mt-5">{{ events.title }}</h2>
     <div class="text-center mb-4">
         <hr>
-        <p class="my-5"><pre>{{ events.content}}</pre></p>
+        <pre class="my-5">{{ events.content}}</pre>
     </div>
     
     {% if user.is_authenticated %}
@@ -20,17 +20,17 @@
     {% for booking in bookings %}
     {% if booking.customer_name == user %}
     <div class="text-center mb-4">
-        <p><pre>|  {{ booking.event_title }}  |</pre></p>
-        <p>-----------------------------------</p>
-        <p><pre>On {{ booking.booking_date }}</pre></p>
-        <p><pre>{{ booking.event_description }}</pre></p>
-        <p><pre>Chosen Menu | {{ booking.menu }}</pre></p>
+        <pre>|  {{ booking.event_title }}  |</pre>
+        -----------------------------------</p>
+        <pre>On {{ booking.booking_date }}</pre>
+        <pre>{{ booking.event_description }}</pre>
+        <pre>Chosen Menu | {{ booking.menu }}</pre>
         <div class="d-flex justify-content-center">
-            <div id="menu" style="width: 600px;">
-                <h1 class="text-center display-5 mt-4 pt-4 text-white">{{ booking.menu.title }}</h1>
+            <div class="menu" style="width: 600px;">
+                <h2 class="text-center display-5 mt-4 pt-4 text-white">{{ booking.menu.title }}</h2>
                 <div class="text-white" style="text-align: center;">
                     <div class="text-center pb-4">
-                        <p><pre>{{ booking.menu.content }}</pre></p>
+                        <pre>{{ booking.menu.content }}</pre>
                     </div>
                 </div>
             </div>
