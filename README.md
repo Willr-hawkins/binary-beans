@@ -57,13 +57,21 @@ The menu page contains information about the café's main menu as well as event 
 
 On the events page, users will be able to find up and coming events that will be held at the cafe, alongside for logged in users there will be a form to allow the user to request a private event of their choice at the cafe.
 
-If a user has made a booking request there event will appear on the events page with all its information.
+If a user has made a booking request their event will appear on the events page with all its information.
 
 ![Events Page](https://github.com/Willr-hawkins/binary-beans/assets/148203271/028769ed-19e5-4024-a9c6-dca316c34f4b)
 
 ![Booking Form](https://github.com/Willr-hawkins/binary-beans/assets/148203271/0eefc90d-623a-496f-8a3d-6ef59757def7)
 
 ![User Events](https://github.com/Willr-hawkins/binary-beans/assets/148203271/f3c96b7f-908b-4e38-a90d-102a468966cf)
+
+Once a booking request has been sbumitted the event will appear with a message saying 'Booking Unapproved'
+
+![unapproved message](https://github.com/Willr-hawkins/binary-beans/assets/148203271/72a61216-f0f6-47f9-aa52-c81605e40e46)
+
+It will remain unapproved unitill the site admin approves the booking from the admin panel, this ensures that users are up to date with the status of their booking.
+
+![approved message](https://github.com/Willr-hawkins/binary-beans/assets/148203271/795ae485-d546-4af6-a814-2c750400c4ca)
 
 
 ### Reviews Page
