@@ -318,6 +318,9 @@ All automatic tests passed.
 ### The W3C Markup validation service
 ![W3C HTML validation](https://github.com/Willr-hawkins/binary-beans/assets/148203271/b2f334df-f55b-4210-854e-0ad454f40f71)
 
+### The W3C CSS validation service
+![W3C CSS validation](https://github.com/Willr-hawkins/binary-beans/assets/148203271/037433b6-c7fc-4a45-ae1f-c2ce7b5cb661)
+
 ### CI Python Linter
 ![CI python linter](https://github.com/Willr-hawkins/django-blog-project/assets/148203271/911e69df-f608-41c5-86bd-1306fd14c28d)
 
