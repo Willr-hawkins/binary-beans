@@ -173,141 +173,141 @@ Automatic testing has been carried out for testing each apps forms.
 
 #### Events Form:
 
-from django.test import TestCase
-from .forms import BookingForm
-from menu.models import EventMenus
+    from django.test import TestCase
+    from .forms import BookingForm
+    from menu.models import EventMenus
 
-class TestBookingForm(TestCase):
+    class TestBookingForm(TestCase):
 
-    def setUp(self):
-        # Create an instance of EventMenus
-        self.event_menu = EventMenus.objects.create(title='Test menu', content='This is a test menu')
+        def setUp(self):
+            # Create an instance of EventMenus
+            self.event_menu = EventMenus.objects.create(title='Test menu', content='This is a test menu')
 
-    def test_form_is_valid(self):
-        """
-        Test the form is valid.
-        """
+        def test_form_is_valid(self):
+            """
+            Test the form is valid.
+            """
 
-        booking_form = BookingForm({
-            'customer_email': 'test@gmail.com',
-            'booking_date': '2024-06-08',
-            'event_title': 'Test Event',
-            'event_description': 'This is a test event',
-            'menu': self.event_menu.id,
-        })
-        self.assertTrue(booking_form.is_valid(), msg='Form is not valid')
+            booking_form = BookingForm({
+                'customer_email': 'test@gmail.com',
+                'booking_date': '2024-06-08',
+                'event_title': 'Test Event',
+                'event_description': 'This is a test event',
+                'menu': self.event_menu.id,
+            })
+            self.assertTrue(booking_form.is_valid(), msg='Form is not valid')
 
-    def test_customer_email_is_required(self):
-        """
-        Test for the cutomer_email field.
-        """
-        booking_form = BookingForm({
-            'customer_email': '',
-            'booking_date': '2024-06-08',
-            'event_title': 'Test Event',
-            'event_description': 'This is a test event',
-            'menu': self.event_menu.id,
-        })
-        self.assertFalse(booking_form.is_valid(), msg='No customer email was provided')
+        def test_customer_email_is_required(self):
+            """
+            Test for the cutomer_email field.
+            """
+            booking_form = BookingForm({
+                'customer_email': '',
+                'booking_date': '2024-06-08',
+                'event_title': 'Test Event',
+                'event_description': 'This is a test event',
+                'menu': self.event_menu.id,
+            })
+            self.assertFalse(booking_form.is_valid(), msg='No customer email was provided')
 
-    def test_booking_date_is_required(self):
-        """
-        Test for the booking_date field.
-        """
-        booking_form = BookingForm({
-            'customer_email': 'test@gmail.com',
-            'booking_date': ' ',
-            'event_title': 'Test Event',
-            'event_description': 'This is a test event',
-            'menu': self.event_menu.id,
-        })
-        self.assertFalse(booking_form.is_valid(), msg='No booking date was provided')
+        def test_booking_date_is_required(self):
+            """
+            Test for the booking_date field.
+            """
+            booking_form = BookingForm({
+                'customer_email': 'test@gmail.com',
+                'booking_date': ' ',
+                'event_title': 'Test Event',
+                'event_description': 'This is a test event',
+                'menu': self.event_menu.id,
+            })
+            self.assertFalse(booking_form.is_valid(), msg='No booking date was provided')
 
-    def test_event_title_is_required(self):
-        """
-        Test for the event_title field.
-        """
-        booking_form = BookingForm({
-            'customer_email': 'test@gmail.com',
-            'booking_date': '2024-06-08',
-            'event_title': ' ',
-            'event_description': 'This is a test event',
-            'menu': self.event_menu.id,
-        })
-        self.assertFalse(booking_form.is_valid(), msg='No event title was provided')
+        def test_event_title_is_required(self):
+            """
+            Test for the event_title field.
+            """
+            booking_form = BookingForm({
+                'customer_email': 'test@gmail.com',
+                'booking_date': '2024-06-08',
+                'event_title': ' ',
+                'event_description': 'This is a test event',
+                'menu': self.event_menu.id,
+            })
+            self.assertFalse(booking_form.is_valid(), msg='No event title was provided')
 
-    def test_event_description_is_required(self):
-        """
-        Test for the event_description field.
-        """
-        booking_form = BookingForm({
-            'customer_email': 'test@gmail.com',
-            'booking_date': '2024-06-08',
-            'event_title': 'Test Event',
-            'event_description': '',
-            'menu': self.event_menu.id,
-        })
-        self.assertFalse(booking_form.is_valid(), msg='No event description was provided')
+        def test_event_description_is_required(self):
+            """
+            Test for the event_description field.
+            """
+            booking_form = BookingForm({
+                'customer_email': 'test@gmail.com',
+                'booking_date': '2024-06-08',
+                'event_title': 'Test Event',
+                'event_description': '',
+                'menu': self.event_menu.id,
+            })
+            self.assertFalse(booking_form.is_valid(), msg='No event description was provided')
 
-    def test_menu_is_required(self):
-        """
-        Test for the menu field.
-        """
-        booking_form = BookingForm({
-            'customer_email': 'test@gmail.com',
-            'booking_date': '2024-06-08',
-            'event_title': 'Test Event',
-            'event_description': 'This is a test event',
-            'menu': '',
-        })
-        self.assertFalse(booking_form.is_valid(), msg='No menu was provided')
+        def test_menu_is_required(self):
+            """
+            Test for the menu field.
+            """
+            booking_form = BookingForm({
+                'customer_email': 'test@gmail.com',
+                'booking_date': '2024-06-08',
+                'event_title': 'Test Event',
+                'event_description': 'This is a test event',
+                'menu': '',
+            })
+            self.assertFalse(booking_form.is_valid(), msg='No menu was provided')
 
 #### Reviews Form: 
 
-from django.test import TestCase
-from .forms import ReviewForm
+    from django.test import TestCase
+    from .forms import ReviewForm
 
-class TestReviewForm(TestCase):
+    class TestReviewForm(TestCase):
 
-    def test_form_is_valid(self):
-        """
-        Test form is valid.
-        """
-        form = ReviewForm({
-            'star_rating': 2,
-            'review_body': 'Test review',
-        })
-        self.assertTrue(form.is_valid(), msg='Form is not valid')
+        def test_form_is_valid(self):
+            """
+            Test form is valid.
+            """
+            form = ReviewForm({
+                'star_rating': 2,
+                'review_body': 'Test review',
+            })
+            self.assertTrue(form.is_valid(), msg='Form is not valid')
 
-    def test_star_rating_is_valid(self):
-        """
-        Test star_rating field is valid.
-        """
-        form = ReviewForm({
-            'star_rating': 10,
-            'review_body': 'Test review',
-        })
-        self.assertFalse(form.is_valid(), msg='Star rating field is not valid, must be within the range 1 to 5')
+        def test_star_rating_is_valid(self):
+            """
+            Test star_rating field is valid.
+            """
+            form = ReviewForm({
+                'star_rating': 10,
+                'review_body': 'Test review',
+            })
+            self.assertFalse(form.is_valid(), msg='Star rating field is not valid, must be within the range 1 to 5')
 
-    def test_star_rating_is_required(self):
-        """
-        Test for the star_rating field.
-        """
-        form = ReviewForm({
-            'star_rating': '',
-            'review_body': 'Test review',
-        })
-        self.assertFalse(form.is_valid(), msg='No star rating was provided')
-    
-    def test_review_body_is_required(self):
-        """
-        Test for the review_body field.
-        """
-        form = ReviewForm({
-            'star_rating': 2,
-            'review_body': '',
-        })
-        self.assertFalse(form.is_valid(), msg='No review body was provided')
+        def test_star_rating_is_required(self):
+            """
+            Test for the star_rating field.
+            """
+            form = ReviewForm({
+                'star_rating': '',
+                'review_body': 'Test review',
+            })
+            self.assertFalse(form.is_valid(), msg='No star rating was provided')
+        
+        def test_review_body_is_required(self):
+            """
+            Test for the review_body field.
+            """
+            form = ReviewForm({
+                'star_rating': 2,
+                'review_body': '',
+            })
+            self.assertFalse(form.is_valid(), msg='No review body was provided')
 
 All automatic tests passed.
 
@@ -328,7 +328,8 @@ All automatic tests passed.
 
 I have used the knowledge I learnt from the I Think Before I Blog course content, and I have taken inspiration from the code written in the walktrough project.
 
-For the liking functionality and unliking functionality i took inspiration from the following youtube videos:
+For the liking functionality and unliking functionality I took inspiration from the following youtube videos:
+- [Codemy.com Channel](https://www.youtube.com/@Codemycom)
 
 - [Liking Functionality](https://www.youtube.com/watch?v=PXqRPqDjDgc)
 
