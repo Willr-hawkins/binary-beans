@@ -4,7 +4,6 @@ Binary Beans is a charming boutique café. This website is designed for those cu
 
 Users of the website can leave reviews directly on our site, sharing their thoughts and experiences. Additionally, users have the option to book a private event tailored to their preferences, ensuring a personalized and memorable occasion.
 
-[The live link for the website is here](https://binary-beans-23fbf9ec9fe1.herokuapp.com/)
 
 ![Responsive mockup](https://github.com/Willr-hawkins/binary-beans/assets/148203271/8cb9a0af-99c3-4b57-bf5a-afcfbc42329f)
 
